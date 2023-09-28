@@ -1,0 +1,50 @@
+body {
+    padding-top: 10vh;
+    font-family: Arial, sans-serif;
+    background-image: url(https://images.unsplash.com/photo-1601370690183-1c7796ecec61?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80);
+}
+
+h1, h2 {
+    color: white;
+    text-align: center;
+}
+
+input{
+    color: white;
+    width: 50px;
+    height: 60px;
+}
+
+input[type="text"]
+{
+    color: black;
+    padding: 5px;
+    margin-right: 5px;
+    font-size:55px;
+}
+
+button{
+    color: black;
+    padding: 4px 10px;
+    width: 75px;
+    height: 50px;
+}
+
+#hangman-container {
+    color: white;
+    max-width: 400px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+#word-display {
+    color: white;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+#guessed-letters {
+    color: white;
+    margin-bottom: 10px;
+    width: 100%;
+}
