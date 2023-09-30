@@ -1,8 +1,9 @@
-const words = ['peanutbutter', 'jelly', 'nutella', 'banana', 'marshmellow', 'bread', 'grape', 'apple', 'pineapple'];
+const words = ['peanutbutter', 'jelly', 'nutella', 'banana', 'marshmellow', 'bread', 'grape', 'apple', 'pineapple', 'chocolate', 'honey', 'apricot', 'cantaloupe'];
 
+//used chatGPT to figure out how to randomize word
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 let guessedWord = Array(selectedWord.length).fill('_');
-let guessesLeft = 6;
+let guessesLeft = 10;
 let guessedLetters = [];
 
 function updateDisplay() {
@@ -47,7 +48,7 @@ function makeGuess() {
 function resetGame() {
     selectedWord = words[Math.floor(Math.random() * words.length)];
     guessedWord = Array(selectedWord.length).fill('_');
-    guessesLeft = 6;
+    guessesLeft = 10;
     guessedLetters = [];
     updateDisplay();
 }
