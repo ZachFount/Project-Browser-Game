@@ -1,3 +1,4 @@
+//word library
 const words = ['peanutbutter', 'jelly', 'nutella', 'banana', 'marshmellow', 'bread', 'grape', 'apple', 'pineapple', 'chocolate', 'honey', 'apricot', 'cantaloupe'];
 
 //used chatGPT to figure out how to randomize word
@@ -11,7 +12,7 @@ function updateDisplay() {
     document.getElementById('guess-count').innerText = guessesLeft;
     document.getElementById('guessed-letters-display').innerText = guessedLetters.join(', ');
 }
-
+// Guessed letter input
 function makeGuess() {
     const guessInput = document.getElementById('guess-input');
     const guess = guessInput.value.toLowerCase();
@@ -36,6 +37,7 @@ function makeGuess() {
 
     updateDisplay();
 
+    //win or loss result
     if (guessesLeft === 0) {
         alert('Game over! The word was: ' + selectedWord);
         resetGame();
@@ -45,6 +47,7 @@ function makeGuess() {
     }
 }
 
+//reset game
 function resetGame() {
     selectedWord = words[Math.floor(Math.random() * words.length)];
     guessedWord = Array(selectedWord.length).fill('_');
