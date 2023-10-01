@@ -47,6 +47,23 @@ function makeGuess() {
     }
 }
 
+//add character pieces (cited: https://github.com/thepeekay/simple-javascript-games/tree/main/hangman)
+let lives = guessesLeft;
+let hangmanImage = document.createElement('img');
+hangmanImage.setAttribute('src', `hangman-${guessesLeft}.png`);
+gameContainer.appendChild(hangmanImage);
+
+
+function handleLetterInput() {
+    let guessedLetter = letterInput.value;
+  
+    if (!selectedWord.includes(guessedLetter)) {
+      guessesLeft--;
+      livesDisplay.innerText = `Lives: ${guessesLeft}`;
+      hangmanImage.setAttribute('src', `hangman-${guessesLeft}.png`);
+    }
+  }
+
 //reset game
 function resetGame() {
     selectedWord = words[Math.floor(Math.random() * words.length)];
