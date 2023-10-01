@@ -47,22 +47,20 @@ function makeGuess() {
     }
 }
 
-//add character pieces (cited: https://github.com/thepeekay/simple-javascript-games/tree/main/hangman)
-let lives = guessesLeft;
-let hangmanImage = document.createElement('img');
-hangmanImage.setAttribute('src', `hangman-${guessesLeft}.png`);
-gameContainer.appendChild(hangmanImage);
-
-
-function handleLetterInput() {
-    let guessedLetter = letterInput.value;
+//add character pieces
+function updateHangmanImage() {
+    const hangmanImage = document.getElementById('hangman-image');
+    const wrongGuesses = 10 - guessesLeft;
   
-    if (!selectedWord.includes(guessedLetter)) {
-      guessesLeft--;
-      livesDisplay.innerText = `Lives: ${guessesLeft}`;
-      hangmanImage.setAttribute('src', `hangman-${guessesLeft}.png`);
-    }
+    hangmanImage.style.display = 'block';
+    hangmanImage.src = `images/${wrongGuesses}.png`;
   }
+  
+  function resetHangmanImage() {
+    const hangmanImage = document.getElementById('hangman-image');
+    hangmanImage.style.display = 'none';
+  }
+
 
 //reset game
 function resetGame() {
