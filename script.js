@@ -4,7 +4,7 @@ const words = ['peanutbutter', 'jelly', 'nutella', 'banana', 'marshmellow', 'bre
 //used chatGPT to figure out how to randomize word
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 let guessedWord = Array(selectedWord.length).fill('_');
-let guessesLeft = 10;
+let guessesLeft = 6;
 let guessedLetters = [];
 
 function updateDisplay() {
@@ -50,7 +50,7 @@ function makeGuess() {
 //add character pieces
 function updateHangmanImage() {
     const hangmanImage = document.getElementById('hangman-image');
-    const wrongGuesses = 10 - guessesLeft;
+    const wrongGuesses = 6 - guessesLeft;
   
     hangmanImage.style.display = 'block';
     hangmanImage.src = `images/${wrongGuesses}.png`;
@@ -66,7 +66,7 @@ function updateHangmanImage() {
 function resetGame() {
     selectedWord = words[Math.floor(Math.random() * words.length)];
     guessedWord = Array(selectedWord.length).fill('_');
-    guessesLeft = 10;
+    guessesLeft = 6;
     guessedLetters = [];
     updateDisplay();
 }
