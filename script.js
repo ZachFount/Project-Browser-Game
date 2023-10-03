@@ -48,7 +48,7 @@ function makeGuess() {
     }
 }
 
-//add character pieces
+//add character pieces (with Johns help)
 function updateHangmanImage() {
     const statusImage = document.getElementById('status-image');
     const wrongGuesses = guessesLeft;
@@ -71,6 +71,7 @@ function resetGame() {
     guessesLeft = 7;
     guessedLetters = [];
     updateDisplay();
+    updateHangmanImage();
 }
 
 updateDisplay();
