@@ -4,5 +4,4 @@ Instead of the typical hangman character on a stand, id like to make it an a man
 
 to do:
         add API for words
-        add plane and character
-        Make parts of character and plane appear once a wrong letter is guessed.
+      
