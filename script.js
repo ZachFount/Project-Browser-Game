@@ -37,6 +37,7 @@ function makeGuess() {
 
     updateDisplay();
     updateHangmanImage()
+    
     //win or loss result
     if (guessesLeft === 0) {
         alert('Game over! The word was: ' + selectedWord);
@@ -52,15 +53,16 @@ function updateHangmanImage() {
     const statusImage = document.getElementById('status-image');
     const wrongGuesses = guessesLeft;
     const imagesrc = `url('images/${wrongGuesses}.png')`;
-    console.log(statusImage)
     statusImage.style.backgroundImage = imagesrc;
     }
   
-  function resetHangmanImage() {
-    const hangmanImage = document.getElementById('hangman-image');
-    hangmanImage.style.display = 'none';
-  }
-
+function resetHangmanImage() {
+    const statusImage = document.getElementById('status-image');
+    const wrongGuesses = guessesLeft;
+    const imagesrc = `url('images/${wrongGuesses}.png')`;
+    statusImage.style.backgroundImage = imagesrc;
+    }
+    
 
 //reset game
 function resetGame() {
