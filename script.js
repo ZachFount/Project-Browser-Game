@@ -19,8 +19,8 @@ async function getWord() {
 	console.error(error);
     }
 }
-
-console.log(getWord())
+//verify API works
+    //console.log(getWord())
 
 //used chatGPT to figure out how to randomize word
 let selectedWord = words[Math.floor(Math.random() * words.length)];
