@@ -1,6 +1,27 @@
 //word library
 const words = ['peanutbutter', 'jelly', 'nutella', 'banana', 'marshmellow', 'bread', 'grape', 'apple', 'pineapple', 'chocolate', 'honey', 'apricot', 'cantaloupe'];
 
+const url = 'https://wordsapiv1.p.rapidapi.com/words/?random=true';
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'e5f11a2f79msha2ec657c0ed7588p19fd9ejsn95c4765e5a6e',
+		'X-RapidAPI-Host': 'wordsapiv1.p.rapidapi.com'
+	}
+};
+async function getWord() { 
+    try {
+	const response = await fetch(url, options);
+	const result = await response.text();
+	console.log(result);
+    } 
+    catch (error) {
+	console.error(error);
+    }
+}
+
+console.log(getWord())
+
 //used chatGPT to figure out how to randomize word
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 let guessedWord = Array(selectedWord.length).fill('_');
@@ -12,6 +33,8 @@ function updateDisplay() {
     document.getElementById('guess-count').innerText = guessesLeft;
     document.getElementById('guessed-letters-display').innerText = guessedLetters.join(', ');
 }
+
+
 // Guessed letter input
 function makeGuess() {
     const guessInput = document.getElementById('guess-input');
