@@ -9,24 +9,36 @@ const options = {
 		'X-RapidAPI-Host': 'wordsapiv1.p.rapidapi.com'
 	}
 };
+let guessedWord;
+let guessesLeft;
+let guessedLetters;
+
 async function getWord() { 
     try {
 	const response = await fetch(url, options);
 	const result = await response.text();
 	console.log(result);
+    let selectedWord = await getWord();
+
+    console.log(selectedWord);
+    selectedWord = selectedWord.word;
+    console.log(selectedWord);
+
+     guessedWord = Array(selectedWord.length).fill('_');
+     guessesLeft = 7;
+     guessedLetters = [];
+
     } 
     catch (error) {
 	console.error(error);
     }
 }
+//getWord();
 //verify API works
     //console.log(getWord())
 
 //used chatGPT to figure out how to randomize word
-let selectedWord = words[Math.floor(Math.random() * words.length)];
-let guessedWord = Array(selectedWord.length).fill('_');
-let guessesLeft = 7;
-let guessedLetters = [];
+//let selectedWord = words[Math.floor(Math.random() * words.length)];
 
 function updateDisplay() {
     document.getElementById('word-display').innerText = guessedWord.join(' ');
