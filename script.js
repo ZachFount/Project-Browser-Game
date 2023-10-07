@@ -12,28 +12,31 @@ const options = {
 let guessedWord;
 let guessesLeft;
 let guessedLetters;
+let selectedWord;
 
 async function getWord() { 
     try {
 	const response = await fetch(url, options);
-	const result = await response.text();
+	const result = await response.json();
 	console.log(result);
-    let selectedWord = await getWord();
+    selectedWord = result.word;
 
-    console.log(selectedWord);
-    selectedWord = selectedWord.word;
     console.log(selectedWord);
 
      guessedWord = Array(selectedWord.length).fill('_');
+     console.log(guessedWord)
      guessesLeft = 7;
      guessedLetters = [];
+
+     updateDisplay()
 
     } 
     catch (error) {
 	console.error(error);
     }
+    
 }
-//getWord();
+getWord();
 //verify API works
     //console.log(getWord())
 
@@ -41,6 +44,7 @@ async function getWord() {
 //let selectedWord = words[Math.floor(Math.random() * words.length)];
 
 function updateDisplay() {
+    console.log(guessedWord)
     document.getElementById('word-display').innerText = guessedWord.join(' ');
     document.getElementById('guess-count').innerText = guessesLeft;
     document.getElementById('guessed-letters-display').innerText = guessedLetters.join(', ');
@@ -109,4 +113,4 @@ function resetGame() {
     updateHangmanImage();
 }
 
-updateDisplay();
+
