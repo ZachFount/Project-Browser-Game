@@ -4,6 +4,7 @@ Instead of the typical hangman character on a stand, id like to make it an a man
 
 # Instrustions:
 ===============
+
         This is a game of word knowledge and chance. To play this game, you must correctly guess all of the letters in the word. If you fail, the character will fall from the plane...we dont want that. If you wish to give up, you can reset the game using the button on the bottom.
         Good luck and have fun!
 

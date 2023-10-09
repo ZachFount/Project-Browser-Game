@@ -112,5 +112,3 @@ function resetGame() {
     updateDisplay();
     updateHangmanImage();
 }
-
-
